@@ -1,6 +1,21 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 
 const Formulario = () => {
+
+const [cita, actualizarCita] = useState({
+    mascota: '',
+    propietario: '',
+    fecha: '',
+    hora: '',
+    sintomas: ''
+});
+
+const handleChange = () => {
+  console.log('escribiendo...')
+}
+
+
+
   return ( 
     <Fragment>
       <h2> Create appointment</h2>
@@ -11,6 +26,7 @@ const Formulario = () => {
             name="mascota"
             className="u-full-width"
             placeholder="Name of the pet"
+            onChange={handleChange}
           />
           <label>Owner Name</label>
           <input 
@@ -18,24 +34,27 @@ const Formulario = () => {
           name="propietario"
           className="u-full-width"
           placeholder='Name of the owner'
+          onChange={handleChange}
           />
           <label>Date</label>
           <input 
           type="date"
           name="fecha"
           className="u-full-width"
+          onChange={handleChange}
           />
           <label>Hour</label>
           <input 
           type="time"
           name="hora"
           className="u-full-width"
+          onChange={handleChange}
           />
           <label>Symptom</label>
           <textarea
           className='u-full-width'
           name='sintomas'
-          
+          onChange={handleChange}
           ></textarea>
           <button
             type='submit'
