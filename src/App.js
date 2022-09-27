@@ -1,7 +1,31 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import Formulario from './components/Formulario';
+import Cita from './components/Cita';
+
 
 function App() {
+
+// Citas en local storage
+let citasIniciales = JSON.parse(localStorage.getItem('citas'));
+if(!citasIniciales){
+  citasIniciales = [];
+}
+
+
+//Arreglo de citas
+  const [citas, guardarCitas] = useState(citasIniciales);
+
+// Funcion que vaya acumulando las citas
+
+const crearCita = cita => {
+    guardarCitas([...citas, cita])
+}
+// Funcion que elimina una cita por su id
+const eliminarCita = id => {
+  const nuevasCitas = citas.filter( cita => cita.id !== id);
+  guardarCitas(nuevasCitas);
+}
+
   return (
     <Fragment>
       <h1>Administrador de pacientes</h1>
@@ -9,10 +33,19 @@ function App() {
         <div className='container'>
           <div className='row'> 
             <div className='one-half column'>
-              <Formulario />
+              <Formulario 
+              crearCita={crearCita}
+              />
             </div>
             <div className='one-half column'>   
-              2 
+              <h2>Pending Appointments</h2>
+              {citas.map( cita => (
+                <Cita
+                  key={cita.id}
+                  cita={cita}
+                  eliminarCita={eliminarCita}
+                />
+              ))}
             </div>
           </div>
         </div>
