@@ -9,6 +9,10 @@ const [cita, actualizarCita] = useState({
     hora: '',
     sintomas: ''
 });
+// Agregando un state para el error
+  const [error, actualizarError ] = useState(false)
+
+
 
 // funcion que se ejecuta cada que el usuario escribe en un input
 const handleChange = (e) => {
@@ -24,13 +28,22 @@ const { mascota, propietario, fecha, hora, sintomas } = cita;
 
 const submitCita = (e) => {
   e.preventDefault();
-  console.log('enviando form')
 
+
+  //validar el formulario
+  if(mascota.trim() === '' || propietario.trim() === '' || fecha.trim() === '' || hora.trim() === '' || sintomas.trim() === '' ){
+      actualizarError(true);
+      return;
+  }
+  // Asignar un ID
 }
 
   return ( 
     <Fragment>
       <h2> Create appointment</h2>
+      { error ? <p className="alerta-error">All the fields need to be filled</p>
+      : null }
+
       <form
       onSubmit={submitCita}
       >
