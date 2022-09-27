@@ -10,16 +10,30 @@ const [cita, actualizarCita] = useState({
     sintomas: ''
 });
 
-const handleChange = () => {
-  console.log('escribiendo...')
+// funcion que se ejecuta cada que el usuario escribe en un input
+const handleChange = (e) => {
+    actualizarCita({
+      ...cita,
+      [e.target.name]: e.target.value
+    })
 }
+// Extraer los valores
+const { mascota, propietario, fecha, hora, sintomas } = cita;
 
+// cuando el usuario presione create
 
+const submitCita = (e) => {
+  e.preventDefault();
+  console.log('enviando form')
+
+}
 
   return ( 
     <Fragment>
       <h2> Create appointment</h2>
-      <form>
+      <form
+      onSubmit={submitCita}
+      >
           <label> Pet Name</label>
           <input 
             type="text"
@@ -27,6 +41,7 @@ const handleChange = () => {
             className="u-full-width"
             placeholder="Name of the pet"
             onChange={handleChange}
+            value={mascota}
           />
           <label>Owner Name</label>
           <input 
@@ -35,6 +50,7 @@ const handleChange = () => {
           className="u-full-width"
           placeholder='Name of the owner'
           onChange={handleChange}
+          value={propietario}
           />
           <label>Date</label>
           <input 
@@ -42,6 +58,7 @@ const handleChange = () => {
           name="fecha"
           className="u-full-width"
           onChange={handleChange}
+          value={fecha}
           />
           <label>Hour</label>
           <input 
@@ -49,12 +66,14 @@ const handleChange = () => {
           name="hora"
           className="u-full-width"
           onChange={handleChange}
+          value={hora}
           />
           <label>Symptom</label>
           <textarea
           className='u-full-width'
           name='sintomas'
           onChange={handleChange}
+          value={sintomas}
           ></textarea>
           <button
             type='submit'
