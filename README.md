@@ -15,16 +15,14 @@
 ## Built With
 
 - HTML/SCSS and JavaScript
-- React Framework, Redux, Redux Toolkit
+- React Framework
 - Jest
 
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
-- Clone this repository with git clone```git@github.com:JohnFTitor/anime-list.git``` using your terminal or command line.
-- Change to the project directory by entering : <br>
-```cd anime-list``` in the terminal
+- Clone this repository with git clone```git@github.com:oliverSCZ/appointment-organizer.git``` using your terminal or command line.
 
 ### Prerequisites
 
@@ -57,22 +55,15 @@ Run ```npm test``` to check prepared test cases related to the website functiona
 ## Deployment
 
 Netlify is set to automatically deploy the production branch (main branch) of this project, so you don't need to worry about it.
-Heroku is manually deployed by our team whenever required. That is, when the main branch gets updated.
 
 ## Authors
 
-👤 **Andrés Felipe Arroyave Naranjo**
+👤 **J. Oliver Coimbra Medina**
 
-- GitHub: [@JohnFTitor](https://github.com/JohnFTitor)
-- Twitter: [@johnftitor](https://twitter.com/johnftitor)
-- LinkedIn: [Andres](https://www.linkedin.com/in/andresarroyavenaranjo/?locale=en_US)
+- GitHub: [@oliverSCZ](https://github.com/oliverSCZ)
+- LinkedIn: [Oliver](https://www.linkedin.com/in/oliver-coimbra/)
 
 ## Acknowledgments
-
-### Web Design
-The [template](https://www.behance.net/gallery/31579789/Ballhead-App-%28Free-PSDs%29) style guidelines such as the layout distribution and selected fonts for the whole project were designed by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) on Behance. This project worked based on it, selecting new colors and changing the nature of the content. 
-
-Check Nelson's page for more amazing GUI and Graphic designs!
 
 ## Show your support
 
