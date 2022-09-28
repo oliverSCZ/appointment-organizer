@@ -18,7 +18,7 @@ if(!citasIniciales){
 // Use Effect para realizar ciertas operaciones cuando el state cambia
 useEffect( () => {
   let citasIniciales = JSON.parse(localStorage.getItem('citas'));
-  
+
   if(citasIniciales){
     localStorage.setItem('citas', JSON.stringify(citas))
   } else {
@@ -40,7 +40,7 @@ const eliminarCita = id => {
 
   return (
     <Fragment>
-      <h1>Administrador de pacientes</h1>
+      <h1>Appointment Organizer</h1>
       <div className='container'>
         <div className='container'>
           <div className='row'> 
